@@ -1,0 +1,130 @@
+body {
+    background-color: #3A3B47;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+.leftBorder {
+    display: inline-block;
+    background-color: #2E2E38;
+    width: 12vw;
+    height: 100vh;
+}
+
+.HeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+header .header {
+    margin-right: 100%;
+}
+
+.logo {
+    width: 6vw;
+    height: auto;
+    margin-left: -1vw;
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-name {
+    width: 80%;
+    height: 4.5vh;
+    border-radius: .4rem;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    background-color: #F2C86B;
+    color: black;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.create-list-btn {
+    cursor: pointer;
+    width: 80%;
+    height: 4.5vh;
+    border-radius: .4rem;
+    margin-bottom: 5%;
+    background-color: #2E2E38;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 4.5vh;
+    border-radius: .4rem;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.list-item.clicked {
+    background-color: #F2C86B;
+    color: black
+}
+
+svg {
+    width: 2vw;
+    height: auto;
+    padding-bottom: 1vw;
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    max-width: 300px; /* Adjust the width of the input box as needed */
+  }
+
+.input-container input {
+    width: 100%;
+    padding-right: 40px; /* Add padding to make space for the SVG */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    height: 40px; /* Adjust height as needed */
+    font-size: 16px;
+  }
+
+.input-container .clear-btn {
+    position: absolute;
+    right: -.4vw;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    width: 24px; /* Adjust icon size */
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888; /* Adjust icon color */
+}
+
+.input-container .clear-btn:hover {
+    color: #000; /* Change color on hover */
+  }
+
+.input-container .svg-icon {
+    width: 24px; /* Adjust icon size */
+    height: 24px;
+    position: absolute;
+    top: 0;
+    left: 2vw;
+  }
