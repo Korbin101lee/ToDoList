@@ -38,22 +38,30 @@ function createList() {
     </div>
 `;
 
+    listsDisplay.appendChild(listDiv);
+    listNameInput.value = 'New List';
+}
 
-    listDiv.addEventListener('click', () => {
+listsDisplay.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (target.closest('.list-item') && !target.closest('.clear-btn')) {
+        const listItem = target.closest('.list-item');
+
         const allListItems = document.querySelectorAll('.list-item');
         allListItems.forEach(item => item.classList.remove('clicked'));
-        listDiv.classList.add('clicked');
-    });
 
-    const clearBtn = listDiv.querySelector('.clear-btn');
-    clearBtn.addEventListener('click', () => {
-        event.stopPropagation();
-        listDiv.remove();
-    });
-    listsDisplay.appendChild(listDiv);
+        listItem.classList.add('clicked');
+    }
 
-    listNameInput.value = 'New List';
+    if (target.closest('.clear-btn')) {
+        event.stopPropagation(); // Prevent the parent '.list-item' click handler from being triggered
+        const listItem = target.closest('.list-item');
+        if (listItem) {
+            listItem.remove();
+        }
+    }
+});
 
-}
 
 createListButton.addEventListener('click', createList);

@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Listify</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/bigLogo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
-        <div class="leftBorder">
-                <header class="HeaderContainer">
-                <img src="images/logo.png" alt="logo" class="logo"></img>
-                <h1 class="header">Listify</h1>
-            </header>
-            <div class="listContainer">
-                <div class="input-container">
-                    <input
-                      type="text"
-                      id="list-name"
-                      class="list-name"
-                      aria-label="Name your to-do list"
-                      value="New List"
-                    />
-                    <button type="button" class="clear-btn" aria-label="Clear input">
+      <div class="leftBorder">
+        <header class="HeaderContainer">
+          <img src="images/logo.png" alt="logo" class="logo" />
+          <h1 class="header">Listify</h1>
+        </header>
+        <div class="listContainer">
+          <div class="input-container">
+            <input
+              type="text"
+              id="list-name"
+              class="list-name"
+              aria-label="Name your to-do list"
+              value="New List"
+            />
+            <button
+              type="button"
+              class="clear-btn"
+              aria-label="Clear input"
+            ></button>
+          </div>
 
-                    </button>
-                  </div>
-                  
-                <button id="create-list-btn" class="create-list-btn">+Create List</button>
-                
-            </div>
-            <div id="lists-display" class="lists-display"></div>
+          <button id="create-list-btn" class="create-list-btn">
+            +Create List
+          </button>
         </div>
+        <div id="lists-display" class="lists-display"></div>
+      </div>
+
+      <div class="centerContainer">
+        <button class="to-do-button" id="to-do-button">+ Add Todo</button>
+      </div>
+      <div class="toDoAddContainer">
+        <div class="toDoAdd">
+          <input
+            type="text"
+            id="to-do-name"
+            class="to-do-name"
+            aria-label="Name your to-do"
+            placeholder="Todo's Title"
+          />
+          <p class="date-text">Date</p>
+
+          <div class="date-picker-container">
+            <input type="date" id="date-picker" class="date-input" />
+          </div>
+        </div>
+      </div>
     </main>
     <script src="index.js"></script>
   </body>
