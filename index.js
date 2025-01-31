@@ -65,3 +65,61 @@ listsDisplay.addEventListener('click', (event) => {
 
 
 createListButton.addEventListener('click', createList);
+
+
+const toDoButton = document.getElementById('to-do-button');
+const toDoAddContainer = document.getElementById('to-Do-Add-Container');
+const cancelButton = document.getElementById('cancel-button');  
+const addButton = document.getElementById('add-button');
+const toDoContainer = document.getElementById('to-do-container');
+const toDoTitle = document.getElementById('to-do-name');
+const datePicker1 = document.getElementById('date-picker1');
+const datePicker2 = document.getElementById('date-picker2');
+
+toDoButton.addEventListener('click', () => {
+    toDoAddContainer.style.display = 'block';
+});
+
+cancelButton.addEventListener('click', () => {
+    toDoAddContainer.style.display = 'none';
+});
+
+addButton.addEventListener('click', addListItem);
+
+
+function addListItem(event) {
+    event.preventDefault(); // Prevents form submission
+
+    if (toDoTitle.value.trim() === '') {
+        alert('Please enter a title');
+        return;
+    }
+
+    if (datePicker1.value.trim() === '') {
+        alert('Please enter a start date');
+        return;
+    }
+
+    if (datePicker2.value.trim() === '') {
+        alert('Please enter a end date');
+        return;
+    }
+    
+    const newToDoItem = document.createElement('div');
+    newToDoItem.classList.add('toDoItem');
+
+    newToDoItem.innerHTML = `
+        <div class="toDoHeader">
+            <input type="checkbox" class="priority-toggle" />
+            <h6 class="toDoTitle">${toDoTitle.value}</h6>
+        </div>
+        <p class="dateText">${datePicker1.value} - ${datePicker2.value}</p>
+    `;
+
+    toDoContainer.appendChild(newToDoItem);
+
+    toDoTitle.value = "";
+    datePicker1.value = "";
+    datePicker2.value = "";
+
+}

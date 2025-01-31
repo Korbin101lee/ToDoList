@@ -10,9 +10,9 @@
   </head>
   <body>
     <main>
-      <div class="leftBorder">
+      <aside class="leftBorder">
         <header class="HeaderContainer">
-          <img src="images/logo.png" alt="logo" class="logo" />
+          <img src="images/logo.png" alt="Listify Logo" class="logo" />
           <h1 class="header">Listify</h1>
         </header>
         <div class="listContainer">
@@ -36,13 +36,22 @@
           </button>
         </div>
         <div id="lists-display" class="lists-display"></div>
-      </div>
+      </aside>
 
-      <div class="centerContainer">
+      <section class="centerContainer">
         <button class="to-do-button" id="to-do-button">+ Add Todo</button>
-      </div>
-      <div class="toDoAddContainer">
-        <div class="toDoAdd">
+
+        <div class="toDoContainer" id="to-do-container">
+          <div class="toDoHeader">
+            <input type="checkbox" id="priority-toggle" class="priority-toggle" />
+            <h6 class="toDoTitle">Title</h6>
+          </div>
+          <p class="dateText">2025-01-29 - 2025-01-31</p>
+        </div>
+        
+      </section>
+      <section class="toDoAddContainer" id="to-Do-Add-Container">
+        <form class="toDoAdd">
           <input
             type="text"
             id="to-do-name"
@@ -53,10 +62,51 @@
           <p class="date-text">Date</p>
 
           <div class="date-picker-container">
-            <input type="date" id="date-picker" class="date-input" />
+            <input type="date" id="date-picker1" class="date-input1" required />
           </div>
-        </div>
-      </div>
+          <div class="line"></div>
+          <div class="date-picker-container">
+          <input type="date" id="date-picker2" class="date-input2" required/>
+          </div>
+          <div class="priority-container">
+            <div class="priority">
+              <p>Priority</p>
+              <input
+                type="radio"
+                id="high"
+                name="priority"
+                value="high"
+                class="priority-radio"
+              />
+              <label for="high" class="priority-label">High</label>
+
+              <input
+              type="radio"
+              id="mid"
+              name="priority"
+              value="mid"
+              class="priority-radio"
+            />
+            <label for="mid" class="priority-label">Mid</label>
+
+            <input
+            type="radio"
+            id="low"
+            name="priority"
+            value="low"
+            class="priority-radio"
+          />
+          <label for="low" class="priority-label">Low</label>
+
+              
+            </div>
+          </div>
+          <div class="add-cancel-buttons" id="add-cancel-buttons">
+            <button type="button" id="cancel-button" class="cancel">Cancel</button>
+            <button type="submit" id="add-button" class="add">Add</button>            
+          </div>
+        </form>
+      </section>
     </main>
     <script src="index.js"></script>
   </body>
